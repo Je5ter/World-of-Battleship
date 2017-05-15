@@ -66,9 +66,9 @@ Then 'Open with' and search for 'python.exe'
 
 ## Authors 
 
-* **CAIL Alexandre** - Game and A.I. development
-* **FROGER Donovan** - A.I. development
-* **GALAN Yann** - Game User Interface development
+* **CAIL Alexandre** - _Game and A.I. development_
+* **FROGER Donovan** - _A.I. development_
+* **GALAN Yann** - _Game User Interface development_
 
 ## License
 
