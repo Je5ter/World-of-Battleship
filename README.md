@@ -42,19 +42,19 @@ At this point we need to check if the latest version of PIP is installed.
 python -m pip install --upgrade pip wheel setuptools
 ```
 
-Then install kivy's dependencies
+Then install kivy's dependencies.
 ```sh
 python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
 python -m pip install kivy.deps.gstreamer
 ```
 
-Finally, install kivy
+Finally, install kivy.
 ```sh
 python -m pip install kivy
 ```
 
 For further informations about Kivy 1.9.1, please check this [website](https://kivy.org/docs/installation/installation.html).
-Installation for [MacOS](https://kivy.org/docs/installation/installation-osx.html) and for [Linux](https://kivy.org/docs/installation/installation-linux.html)
+Installation for [MacOS](https://kivy.org/docs/installation/installation-osx.html) and for [Linux](https://kivy.org/docs/installation/installation-linux.html).
 
 ## Running the game
 
@@ -72,7 +72,7 @@ Then 'Open with' and search for 'python.exe'
 
 ## License
 
-This is an Open-source project
+This is an **Open-source** project.
 
 ## About the game
 This game is a school porject so it's not totally finished and will certainly not receive any update.
