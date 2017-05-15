@@ -1,11 +1,11 @@
 # World of Battleship
----
+
 World of Battleship is a battleship game made by three students from Polytech' Nantes, France.
 This game was first created for a project with the following theme : Optimisation, choice, random, constraints.
 We've created differents A.I. to play against players or just to see A.I. vs A.I. matches.
 
-### Tech
----
+# Tech
+
 World of Battleship has been created with different sotware:
 
 * [Atom](https://atom.io/) - A hackable text editor 
@@ -17,12 +17,12 @@ World of Battleship has been created with different sotware:
 
 And of course Worlf of Battleship itself is open source with a [public repository][dill]
  on GitHub.
-### Prerequisites
----
+# Prerequisites
+
 Simply download the _**World of Battleship (Alpha)**_ folder.
 
-### Installation
----
+# Installation
+
 World of Battleship requires [Python.exe](https://www.python.org/download/releases/3.4.3/) v3.4.3 to run.
 First of all, go to the following [official Python website](https://www.python.org/downloads/release/python-343/) and download your corresponding OS version.
 
@@ -56,25 +56,25 @@ python -m pip install kivy
 For further informations about Kivy 1.9.1, please check this [website](https://kivy.org/docs/installation/installation.html).
 Installation for [MacOS](https://kivy.org/docs/installation/installation-osx.html) and for [Linux](https://kivy.org/docs/installation/installation-linux.html)
 
-### Running the game
----
+# Running the game
+
 Run the main.py file in the World of Battleship (Alpha) folder with python.
 ```sh
 Right-Click on 'main.py'
 Then 'Open with' and search for 'python.exe'
 ```
 
-### Authors 
----
+# Authors 
+
 * **CAIL Alexandre** - Game and A.I. development
 * **FROGER Donovan** - A.I. development
 * **GALAN Yann** - Game User Interface development
 
-### License
----
+# License
+
 This is an Open-source project
 
-### About the game
+# About the game
 This game is a school porject so it's not totally finished and will certainly not receive any update.
 We share our work for non-commercial purposes.
 The video used in this game belongs to Wargaming.net. All the rights come back to them. If you are the owner of this content, please contact me. 
