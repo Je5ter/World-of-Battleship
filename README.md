@@ -1,7 +1,7 @@
 # World of Battleship
 
 World of Battleship is a battleship game made by three students from Polytech' Nantes, France.
-This game was first created for a project with the following theme : Optimisation, choice, random, constraints.
+This game was first created for a school project with the following theme : Optimisation, choice, random, constraints.
 We've created differents A.I. to play against players or just to see A.I. vs A.I. matches.
 
 ## Tech
