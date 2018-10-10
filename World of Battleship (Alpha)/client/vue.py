@@ -1,25 +1,18 @@
 from kivy.config import Config
-
-Config.set('input', 'mouse', 'mouse,disable_multitouch')
-
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
-from kivy.graphics import Rectangle
 from kivy.uix.image import Image
 from kivy.core.window import Window
-from kivy.graphics.instructions import InstructionGroup
-from kivy.graphics import Color
-from kivy.graphics import Line
 from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
 from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.uix.video import Video
 from kivy.uix.dropdown import DropDown
-from functools import partial
-from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition, SlideTransition
+
+Config.set('input', 'mouse', 'mouse,disable_multitouch')
 
 
 class Vue(FloatLayout):
@@ -370,22 +363,22 @@ class Vue(FloatLayout):
             taille0 = 0
             taille1 = int(taille / 2)
         
-        if Window.mouse_pos[0] >= (40.0 + taille0 * 57 - correction * 57) and Window.mouse_pos[0] < (
-                610.0 - taille0 * 57) and Window.mouse_pos[1] >= (40.0 + taille1 * 43 - correction * 43) and \
-                Window.mouse_pos[1] < (469.0 - taille1 * 43):
+        if (40.0 + taille0 * 57 - correction * 57) <= Window.mouse_pos[0] < (
+                610.0 - taille0 * 57) and (40.0 + taille1 * 43 - correction * 43) <= Window.mouse_pos[1] < (
+                469.0 - taille1 * 43):
             if Window.mouse_pos[0] < 40 or Window.mouse_pos[1] < 40:
                 pass
             else:
                 for i in range(10):
-                    if Window.mouse_pos[0] >= 40 + 57 * i and Window.mouse_pos[0] < 97 + 57 * i:
+                    if 40 + 57 * i <= Window.mouse_pos[0] < 97 + 57 * i:
                         self.bateauX = 68 + i * 57
-                    if Window.mouse_pos[1] >= 40 + 43 * i and Window.mouse_pos[1] < 83 + 43 * i:
+                    if 40 + 43 * i <= Window.mouse_pos[1] < 83 + 43 * i:
                         self.bateauY = 61 + i * 43
                 with self.panelPrincipale.canvas:
                     self.follow = Image(
                         source='client/ressources/Bateaux/Bateau' + str(indice) + '_' + str(ori) + '.png')
-                    self.follow.size = (
-                    self.follow.texture.size[0] / 1.5, self.follow.texture.size[1] / (1.5 + 0.5 * ori))
+                    self.follow.size = (self.follow.texture.size[0] / 1.5,
+                                        self.follow.texture.size[1] / (1.5 + 0.5 * ori))
                     self.follow.pos = (self.bateauX - self.follow.size[0] / 2, self.bateauY - self.follow.size[1] / 2)
     
     def inscriptionBateaux(self):
@@ -397,12 +390,11 @@ class Vue(FloatLayout):
     
     def objectifTir(self, dt):
         self.panelPrincipale.canvas.clear()
-        if Window.mouse_pos[0] >= 670.0 and Window.mouse_pos[0] < 1240.0 and Window.mouse_pos[1] >= 40.0 and \
-                Window.mouse_pos[1] < 469.0:
+        if 670.0 <= Window.mouse_pos[0] < 1240.0 and 40.0 <= Window.mouse_pos[1] < 469.0:
             for i in range(10):
-                if Window.mouse_pos[0] >= 670 + 57 * i and Window.mouse_pos[0] < 727 + 57 * i:
+                if 670 + 57 * i <= Window.mouse_pos[0] < 727 + 57 * i:
                     self.viseeX = 698 + i * 57
-                if Window.mouse_pos[1] >= 40 + 43 * i and Window.mouse_pos[1] < 83 + 43 * i:
+                if 40 + 43 * i <= Window.mouse_pos[1] < 83 + 43 * i:
                     self.viseeY = 61 + i * 43
             with self.panelPrincipale.canvas:
                 self.follow = Image(source='client/ressources/Cible.png')

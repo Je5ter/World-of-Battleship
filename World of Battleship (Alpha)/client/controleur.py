@@ -1,6 +1,5 @@
 from kivy.clock import Clock
-from functools import partial
-from kivy.core.window import Window
+
 from client.vue import Vue
 from game.partie import *
 
@@ -124,7 +123,7 @@ class Controleur:
             self.vue.affichageTirsIA2(self.partie.joueurs[1].tabTirs, self.partie.joueurs[1].tirX,
                                       self.partie.joueurs[1].tirY)
         
-        if self.partie.winner[0] == True:
+        if self.partie.winner[0]:
             self.eventTour.cancel()
             self.vue.endGame('ia', self.partie.nbTours, self.partie.joueurs[self.partie.winner[1]].nom)
     
@@ -201,13 +200,13 @@ class Controleur:
         self.partiePredef.result.append(self.partiePredef.Parties[0].Tour(True, 1))  # Tour joueur
         if self.partie.joueurs[0].tabTirs[self.partie.joueurs[0].tirX][self.partie.joueurs[0].tirY] == 'T':
             self.vue.touched()
-            if self.partie.joueurs[0].coule == True:
+            if self.partie.joueurs[0].coule:
                 self.vue.textSink()
                 self.partie.joueurs[0].coule = False
         else:
             self.vue.missed()
         
-        if self.partie.winner[0] == True:
+        if self.partie.winner[0]:
             self.vue.eventTirs.cancel()
             for i in range(len(self.vue.B)):
                 self.vue.T[i].disabled = True
@@ -224,7 +223,7 @@ class Controleur:
             self.vue.viseeY = 61 + (9 - self.partie.joueurs[1].tirX) * 43
             self.vue.missed()
         
-        if self.partie.winner[0] == True:
+        if self.partie.winner[0]:
             self.vue.eventTirs.cancel()
             for i in range(len(self.vue.B)):
                 self.vue.T[i].disabled = True
@@ -246,7 +245,7 @@ class Controleur:
             else:
                 self.vue.ori = 0
         
-        if keycode[1] == 'enter' and self.partie.winner[0] == True:
+        if keycode[1] == 'enter' and self.partie.winner[0]:
             self.vue.affichePanelAccueil()
             self.partiePredef.__init__()
         

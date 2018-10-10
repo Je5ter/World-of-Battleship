@@ -1,5 +1,4 @@
 from game.joueur import *
-import random
 
 
 class Partie:
@@ -70,7 +69,6 @@ class PartiePredef:
             self.Stats(self.result)
     
     def inputJoueur(self, j):
-        # j = str(input('Choisissez le type du joueur'+str(nombre)+' (J , IAProba , IARandom , IADecroi , IACroi , IAQuad, IACinq) : '))
         if j == 'J':
             return Joueur(self.nomJ)
         if j == 'IAProba':

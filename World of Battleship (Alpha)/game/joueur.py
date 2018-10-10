@@ -2,7 +2,7 @@ from game.bato import *
 import random
 
 
-class Entite():
+class Entite:
     def __init__(self, nomJoueur):
         self.nom = nomJoueur
         self.tabTirs = [[0] * 10 for i in range(10)]
@@ -107,14 +107,14 @@ class Entite():
         (dx, dy) = self.Bateaux.transpose(o)
         positions = []
         for i in range(t):
-            if y + i * dy < 0 or y + i * dy > 9 or x + i * dx < 0 or x + i * dx > 9 or self.tabProba[x + i * dx][
-                y + i * dy] == -1:
+            if y + i * dy < 0 or y + i * dy > 9 or x + i * dx < 0 or x + i * dx > 9 \
+                    or self.tabProba[x + i * dx][y + i * dy] == -1:
                 return False
             else:
                 positions.append((x + i * dx, y + i * dy))
         
         for pos in self.Touche:
-            if not pos in positions:
+            if pos not in positions:
                 return False
         
         for i in range(t):
@@ -124,8 +124,8 @@ class Entite():
     def ProbaBateau(self, x, y, o, t):
         (dx, dy) = self.Bateaux.transpose(o)
         for i in range(t):
-            if y + i * dy < 0 or y + i * dy > 9 or x + i * dx < 0 or x + i * dx > 9 or self.tabProba[x + i * dx][
-                y + i * dy] == -1:
+            if y + i * dy < 0 or y + i * dy > 9 or x + i * dx < 0 or x + i * dx > 9 \
+                    or self.tabProba[x + i * dx][y + i * dy] == -1:
                 return False
         
         for i in range(t):
@@ -215,18 +215,13 @@ class JoueurIARandom(Entite):
 
 
 class JoueurIADecroissant(Entite):
-    '''def choose(self,proba,x,y):
-        tab = [(-1,-1)]*100
-        for i in range(int(proba*100)):
-            tab[i] = (x,y)
-        return tab[random.randint(0,99)]'''
     
     def choose(self, proba, x, y):
         tab = [(-1, -1)] * 100
         for i in range(int(proba * 100)):
             tab[i] = (x, y)
         ok = False
-        while (ok == False):
+        while not ok:
             a = random.randint(0, 99)
             if ((tab[a][0]) % 2 == 0 and (tab[a][1]) % 2 == 0) or ((tab[a][0]) % 2 == 1 and (tab[a][1]) % 2 == 1):
                 ok = True
@@ -311,7 +306,7 @@ class JoueurIADia(Entite):
         for i in range(int(proba * 100)):
             tab[i] = (x, y)
         ok = False
-        while (ok == False):
+        while not ok:
             a = random.randint(0, 99)
             if ((tab[a][0]) % 2 == 0 and (tab[a][1]) % 2 == 0) or ((tab[a][0]) % 2 == 1 and (tab[a][1]) % 2 == 1):
                 ok = True
@@ -369,7 +364,7 @@ class JoueurIAQua(Entite):
                 if self.tabTirs[i][j] == 'M' or self.tabTirs[i][j] == 'T':
                     vide = False
         if vide:
-            return (random.randint(0, 9), random.randint(0, 9))
+            return random.randint(0, 9), random.randint(0, 9)
         ok = False
         while not ok:
             a = random.randint(0, len(tab) - 1)
@@ -396,7 +391,7 @@ class JoueurIAQua(Entite):
                 Max = self.probTot()
                 for k in range(int(1000 * self.tabProba[i][j] / Max)):
                     tab.append((i, j))
-        return (tab)
+        return tab
     
     # fonction appelée dans tour pour choisir la case ciblée : par probabilitées
     def Visee(self, adversaire, a):
@@ -444,7 +439,7 @@ class JoueurIACinq(Entite):
         for i in range(10):
             for j in range(10):
                 valid = True
-                if (self.tabProba[i][j] >= self.tabProba[maxi[0][0]][maxi[0][1]]):
+                if self.tabProba[i][j] >= self.tabProba[maxi[0][0]][maxi[0][1]]:
                     maxi[4] = maxi[3]
                     maxi[3] = maxi[2]
                     maxi[2] = maxi[1]
@@ -469,7 +464,7 @@ class JoueurIACinq(Entite):
                 if valid and (self.tabProba[i][j] >= self.tabProba[maxi[4][0]][maxi[4][1]]):
                     maxi[4] = (i, j)
                     valid = False
-        return (maxi)
+        return maxi
     
     # fonction appelée dans tour pour choisir la case ciblée : par probabilitées
     def Visee(self, adversaire, a):
@@ -567,8 +562,8 @@ class JoueurIAQuadrillage(Entite):
                 self.choixCarre()
                 for i in range(5):
                     for j in range(5):
-                        if self.tabProba[i + self.CarreActu[0]][j + self.CarreActu[1]] > 0 and (
-                        self.tirX, self.tirY) == (-1, -1):
+                        if self.tabProba[i + self.CarreActu[0]][j + self.CarreActu[1]] > 0 \
+                                and (self.tirX, self.tirY) == (-1, -1):
                             (self.tirX, self.tirY) = self.choose(
                                 self.tabProba[i + self.CarreActu[0]][j + self.CarreActu[1]] / Max, i, j)
         self.TirIA(self.tirX, self.tirY, adversaire)

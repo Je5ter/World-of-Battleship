@@ -74,7 +74,7 @@ class BateauIA(Bateaux):
         self.o = ['N', 'S', 'O', 'E']
         self.i = 0
         for Taille in [2, 3, 3, 4, 5]:
-            while self.pos[self.i] == []:
+            while not self.pos[self.i]:
                 x = random.randint(0, 9)
                 y = random.randint(0, 9)
                 o = self.o[random.randint(0, 3)]

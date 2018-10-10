@@ -1,11 +1,9 @@
 import kivy
 import os
+from kivy.app import App
+from client.controleur import Controleur
 
 kivy.require('1.9.1')  # replace with your current kivy version !
-
-from kivy.app import App
-
-from client.controleur import Controleur
 
 
 class Game(App):
