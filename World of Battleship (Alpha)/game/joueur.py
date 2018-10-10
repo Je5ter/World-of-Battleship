@@ -3,12 +3,17 @@ import random
 
 
 class Entite:
+    
     def __init__(self, nomJoueur):
         self.nom = nomJoueur
         self.tabTirs = [[0] * 10 for i in range(10)]
         self.tirX = 0
         self.tirY = 0
+        self.Touche = []
+        self.Rest = []
+        self.type = ''
         self.coule = False
+        self.tabProba = []
     
     def reset(self):
         if self.type == 'Joueur':
@@ -232,7 +237,6 @@ class JoueurIADecroissant(Entite):
         self.Bateaux = BateauIA()
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.type = 'Bot'
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)
@@ -273,7 +277,6 @@ class JoueurIAProba(Entite):
         self.type = 'Bot'
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)
     
@@ -318,7 +321,6 @@ class JoueurIADia(Entite):
         self.type = 'Bot'
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)
     
@@ -352,7 +354,6 @@ class JoueurIAQua(Entite):
         self.type = 'Bot'
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)
     
@@ -425,7 +426,6 @@ class JoueurIACinq(Entite):
         self.type = 'Bot'
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)
     
@@ -503,7 +503,6 @@ class JoueurIACroissant(Entite):
         self.Bateaux = BateauIA()
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.type = 'Bot'
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)
@@ -543,7 +542,6 @@ class JoueurIAQuadrillage(Entite):
         self.Bateaux = BateauIA()
         self.tabProba = [[0] * 10 for i in range(10)]
         self.modeChasse = False
-        self.Touche = []
         self.type = 'Bot'
         self.Rest = [2, 3, 3, 4, 5]
         self.Proba(False)

@@ -9,7 +9,11 @@ class Controleur:
     def __init__(self):
         self.vue = Vue(self, size=(1280, 720))
         self.partiePredef = PartiePredef()
+        self.partie = None
         self.client = None
+        self.eventBateau = None
+        self.eventBateau2 = None
+        self.eventTour = None
         self.i = 0
         self.i2 = 0
         
@@ -142,7 +146,7 @@ class Controleur:
         if self.vue.textPartie.text == '':
             self.vue.textPartie.text = self.vue.textPartie.hint_text
         if int(self.vue.textPartie.text) - 1 < 1:
-            self.vue.textPartie.text == 1
+            self.vue.textPartie.text = str(1)
         else:
             self.vue.textPartie.text = str(int(self.vue.textPartie.text) - 1)
     
@@ -153,6 +157,7 @@ class Controleur:
         self.vue.affichePanelOption()
     
     def choixPlacement(self, instance):
+        global ajustementX, ajustementY, sens
         split = instance.text.split()
         
         if self.vue.ori == 0:
