@@ -9,59 +9,82 @@ We've created differents A.I. to play against players or just to see A.I. vs A.I
 World of Battleship has been created with different sotware:
 
 * [Atom](https://atom.io/) - A hackable text editor 
-* [Python 3.4.3](https://www.python.org) - Programming language
-* [Kivy 1.9.1](https://kivy.org/) - Open source Python library for rapid development of applications
+* [Python 3.5.4](https://www.python.org) - Programming language
+* [Kivy 1.11.1](https://kivy.org/) - Open source Python library for rapid development of applications
 * [Photoshop CC](http://www.adobe.com/products/photoshop.html) - The world’s best imaging and design app
 * [Premiere Pro CC](http://www.adobe.com/products/premiere.html) -  The industry-leading video editing software
 * [After Effects CC](http://www.adobe.com/products/aftereffects.html) - The industry-standard animation and creative compositing app
 
 And of course Worlf of Battleship itself is open source with a [public repository][dill]
  on GitHub.
+ 
 ## Prerequisites
 
 Simply download the _**World of Battleship (Alpha)**_ folder.
 
 ## Installation
 
-World of Battleship requires [Python.exe](https://www.python.org/download/releases/3.4.3/) v3.4.3 to run.
-First of all, go to the following [official Python website](https://www.python.org/downloads/release/python-343/) and download your corresponding OS version.
+:warning: World of Battleship requires **Python v3.5.4** to run (*not yet tested with higher versions of Python*)  
 
-### _Windows_
-During installation, in the "Customize Python" part, make sure that entire feature of Python will be installed. If not, click on the "Drive's icon" next to "Python" and select "Entire feature will be installed on local drive".
+### Using Conda
 
-Now, follow the steps to install Kivy 1.9.1.
-First of all, open a command prompt like so :
+If you prefer, there is an easy way of installing **Python 3.5.4** and **Kivy** (with all dependencies) thanks to the **Conda** package manager. We recommend to use the lite version of **Anaconda**, wich is called **Miniconda**. To install this environnement, please check [this page](https://docs.conda.io/projects/conda/en/latest/user-guide/install/). 
+
+Once the Conda environnement is installed with Python 3.5.4, simply run the following command inside a command prompt :
 ```sh
-Press 'Windows + R'
-Write 'cmd' and press 'Enter'
-Write 'Python' and press 'Enter'
+conda install kivy -c conda-forge
 ```
 
-At this point we need to check if the latest version of PIP is installed.
+### Windows
+
+First of all, go to the following [official Python website](https://www.python.org/downloads/release/python-354/) and download your corresponding architecture version.
+
+#### Python installation
+During the Python installation setup, make sure that the `Add Python 3.5 to PATH` checkbox is checked, then click on `Install now` and let the installer do the rest.
+To check if python is correclty installed, run the following command into a command prompt :
 ```sh
-python -m pip install --upgrade pip wheel setuptools
+python --version
+```
+
+ℹ *If this command leads to the Windows Store, you needs to **remove Python from the `Application execution aliases`** in the Windows settings. For more information, please refer to [this post](https://superuser.com/questions/1437590/typing-python-on-windows-10-version-1903-command-prompt-opens-microsoft-stor)*
+
+
+#### Kivy installation
+Once Python 3.5.4 is installed, we can focus on the Kivy installation process.
+
+At this point, we need to install the latest version of PIP, the Python's package manager.
+```sh
+python -m pip install --upgrade pip wheel setuptools virtualenv
 ```
 
 Then install kivy's dependencies.
 ```sh
-python -m pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
-python -m pip install kivy.deps.gstreamer
+python -m pip install docutils pygments pypiwin32 kivy_deps.sdl2==0.1.* kivy_deps.glew==0.1.*
+python -m pip install kivy_deps.gstreamer==0.1.*
 ```
 
 Finally, install kivy.
 ```sh
-python -m pip install kivy
+python -m pip install kivy==1.11.1
 ```
 
-For further informations about Kivy 1.9.1, please check this [website](https://kivy.org/docs/installation/installation.html).
-Installation for [MacOS](https://kivy.org/docs/installation/installation-osx.html) and for [Linux](https://kivy.org/docs/installation/installation-linux.html).
+ℹ *For further informations about Kivy 1.11.1, please check this [website](https://kivy.org/doc/stable/gettingstarted/installation.html).*
+
+### Linux and MacOS
+
+Python 3.5.4 installers can be found on the [official Python website](https://www.python.org/downloads/release/python-354/)
+
+Installation guide for Kivy on these OS can be found there : 
+* [MacOS](https://kivy.org/doc/stable/installation/installation-osx.html)
+* [Linux](https://kivy.org/doc/stable/installation/installation-linux.html).
 
 ## Running the game
-
-Run the main.py file in the World of Battleship (Alpha) folder with python.
+The game starts with the `main.py` script located in the `World of Battleship (Alpha)` folder. 
+There is two ways of running this script : 
+* Open the script with the Python executable (Right-click on the script, then `Open With`, then select `python.exe`)
+* From a commmand prompt opened in the game folder, run the following command : 
 ```sh
-Right-Click on 'main.py'
-Then 'Open with' and search for 'python.exe'
+python main.py
 ```
 
 ## Authors 
