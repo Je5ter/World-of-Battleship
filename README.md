@@ -30,7 +30,7 @@ Simply download the _**World of Battleship (Alpha)**_ folder.
 
 If you prefer, there is an easy way of installing **Python 3.5.4** and **Kivy** (with all dependencies) thanks to the **Conda** package manager. We recommend to use the lite version of **Anaconda**, wich is called **Miniconda**. To install this environnement, please check [this page](https://docs.conda.io/projects/conda/en/latest/user-guide/install/). 
 
-Once the Conda environnement is installed with Python 3.5.4, simply run the following command inside a command prompt :
+Once the Conda environnement is installed with Python 3.5.4, run the following command inside a command prompt :
 ```sh
 conda install kivy -c conda-forge
 ```
