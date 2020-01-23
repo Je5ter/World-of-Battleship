@@ -17,7 +17,7 @@ World of Battleship has been created with different sotware:
  
 ## Prerequisites
 
-Simply download the _**World of Battleship (Alpha)**_ folder.
+Simply download the _**World of Battleship (Alpha)**_ folder [here](https://github.com/Je5ter/World-of-Battleship/archive/master.zip).
 
 ## Installation
 
