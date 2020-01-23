@@ -14,9 +14,6 @@ World of Battleship has been created with different sotware:
 * [Photoshop CC](http://www.adobe.com/products/photoshop.html) - The world’s best imaging and design app
 * [Premiere Pro CC](http://www.adobe.com/products/premiere.html) -  The industry-leading video editing software
 * [After Effects CC](http://www.adobe.com/products/aftereffects.html) - The industry-standard animation and creative compositing app
-
-And of course Worlf of Battleship itself is open source with a [public repository][dill]
- on GitHub.
  
 ## Prerequisites
 
