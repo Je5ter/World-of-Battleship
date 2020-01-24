@@ -95,6 +95,6 @@ python main.py
 This is an **Open-source** project.
 
 ## About the game
-This game is a school porject so it's not totally finished and will certainly not receive any update.
+This game is a school project so it's not totally finished and will certainly not receive any update.
 We share our work for non-commercial purposes.
-The video used in this game belongs to Wargaming.net. All the rights come back to them. If you are the owner of this content, please contact me. 
+The video and the logo used in this game belongs to Wargaming.net. All the rights come back to them. If you are the owner of this content, please contact me. 
